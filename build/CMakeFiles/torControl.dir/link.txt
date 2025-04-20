@@ -1,0 +1,2 @@
+/usr/bin/ar qc libtorControl.a CMakeFiles/torControl.dir/src/torControl.cpp.o
+/usr/bin/ranlib libtorControl.a
