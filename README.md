@@ -1,13 +1,12 @@
 # Tor Control
 
-### Simple Tor Controller Librairy for C++
-### Licensed under the MIT License. See LICENSE for details.
+### Simple Tor Controller Library for C++
+##### Licensed under the MIT License. See LICENSE for details.
 
 ## Case of Use:
-This librairy was originally developped to manage tor and tor onion services via a C++ program. It aims to be cross plateform. It was quickly developped and is for sure not optimized. Any contribution is encourage!
+This Library was originally developped to manage tor and tor onion services via a C++ program. It aims to be cross plateform. It was quickly developped and is for sure not optimized. Any contribution is encourage!
 
-
-## Usage
+## Usage:
 Simply init the Handler with your tor path, torrc path destined OS and the desired database path. 
 The database path is used to store onion services to be able to manage it in a more simple way. A list of functions is given at the end of this file.
 

@@ -1,9 +1,15 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.15)
+project(torControl VERSION 1.0.0 LANGUAGES CXX)
 
-project(torControl)
+# Create the library target
+add_library(torControl src/torControl.cpp)
 
-set(SOURCE_FILES ${CMAKE_CURRENT_SOURCE_DIR}/src/torControl.cpp)
-set(INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
+# Set C++ standard
+target_compile_features(torControl PUBLIC cxx_std_17)
 
-add_library(${PROJECT_NAME} ${SOURCE_FILES})
-target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
+# Public headers
+target_include_directories(torControl
+  PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>
+)
