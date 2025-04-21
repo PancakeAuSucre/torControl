@@ -14,8 +14,6 @@ target_include_directories(torControl
     $<INSTALL_INTERFACE:include>
 )
 
-
-
 include(CMakePackageConfigHelpers)
 
 # Create a version file
