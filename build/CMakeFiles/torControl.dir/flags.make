@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/arthur/Projects/DeCom/TorControl/src
+CXX_INCLUDES = -I/home/arthur/Projects/DeCom/TorControl/include
 
-CXX_FLAGS = -std=gnu++17
+CXX_FLAGS = 
 
