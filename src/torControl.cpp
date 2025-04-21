@@ -1,4 +1,5 @@
-#include "torControl.hpp"
+#include "../include/torControl.hpp"
+#include "../include/databaseLogic.hpp"
 
 #include <string>
 #include <cstdlib>
