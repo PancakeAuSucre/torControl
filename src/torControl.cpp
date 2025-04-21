@@ -89,6 +89,8 @@ int torHandler::torStop(){
         //TO IMPLEMENT MOBILE SUPPORT
     }
 
+    return 0;
+
 }
 
 
@@ -213,6 +215,9 @@ std::string torHandler::addNewOnionService(
     appendDB(torHandler::getDatabasePath(), onionToAdd);
 
     torHandler::rebuildTorrc();
+
+    return torHandler::getServiceAddressByPath(path);
+
 }
 
 void torHandler::delOnionService(std::string name){
@@ -410,19 +415,21 @@ const std::string torHandler::getServiceAddressByName(std::string& name){
         }
     }
 
+    return "error";
+
 }
 const std::string torHandler::getServiceAddressByPath(std::string& path){
 
     path+="/hostname";
 
-    std::filesystem::path path(path);  
+    std::filesystem::path filePath(path);  
 
-    if (!std::filesystem::exists(path)) {
+    if (!std::filesystem::exists(filePath)) {
         std::cerr << "File does not exist: " << path << std::endl;
         return "";  
     }
 
-    std::ifstream file(path);
+    std::ifstream file(filePath);
     if (!file.is_open()) {
         std::cerr << "Failed to open file: " << path << std::endl;
         return "";
@@ -431,8 +438,6 @@ const std::string torHandler::getServiceAddressByPath(std::string& path){
     std::getline(file, output);
 
     return output;
-
-
 }
 
 /*
