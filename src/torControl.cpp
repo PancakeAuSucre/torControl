@@ -394,7 +394,7 @@ void torHandler::changeDestinationPort(std::string name, unsigned int newDestina
 }
 
 
-const std::string torHandler::getServiceAddressByName(std::string& name){
+const std::string torHandler::getServiceAddressByName(std::string name){
     std::vector<std::string> onionServices = readDB(torHandler::getDatabasePath());
 
     for(unsigned int i = 0; i < onionServices.size(); i++){
@@ -411,17 +411,22 @@ const std::string torHandler::getServiceAddressByName(std::string& name){
         }
 
         if(currentName == name){
-            return torHandler::getServiceAddressByPath(parser(onionServices[i], 'j')[1]);            
+            std::vector<std::string> parserOutput = parser(onionServices[i], ';');
+
+            if(parserOutput.size() >= 2){
+                std::string path = parserOutput[1];
+                return torHandler::getServiceAddressByPath(path);            
+            }
+
+
         }
 
 
     }
-    std::cout << "test 2" << std::endl;
-
     return "error";
 
 }
-const std::string torHandler::getServiceAddressByPath(std::string& path){
+const std::string torHandler::getServiceAddressByPath(std::string path){
 
     path+="/hostname";
 

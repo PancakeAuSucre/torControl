@@ -56,6 +56,6 @@ namespace torHandler{
     void changeRequestedPort(std::string name, unsigned int newRequestedPort);
     void changeDestinationPort(std::string name, unsigned int newDestinationPort);
 
-    const std::string getServiceAddressByName(std::string& name);
-    const std::string getServiceAddressByPath(std::string& path);
+    const std::string getServiceAddressByName(std::string name);
+    const std::string getServiceAddressByPath(std::string path);
 }
