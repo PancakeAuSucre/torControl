@@ -15,6 +15,7 @@ namespace torHandler{
     void init(
         std::string torPath,
         std::string torrcPath,
+        std::string torServiceDatabasePath,
         OperatingSystems os
     );
 

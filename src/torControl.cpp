@@ -25,7 +25,7 @@ struct Tor {
     OperatingSystems OS;
 
     bool osIsComputer = true;
-    std::string pathToDatabase = "./torOnionServices.csv";
+    std::string pathToDatabase;
 
 };
 
@@ -43,11 +43,13 @@ TOR HANDLER FUNCTIONS
 
 void torHandler::init(std::string torPath,
     std::string torrcPath,
+    std::string torServiceDatabasePath,
     OperatingSystems os){
 
     torHandler::setTorPath(torPath);
     torHandler::setTorrcPath(torrcPath);
     torHandler::setOS(os);
+    torHandler::setDatabasePath(torServiceDatabasePath);
 }
 
 
